@@ -20,9 +20,9 @@ export default function QuizReview({ questions, userAnswers }: QuizReviewProps) 
       <CardContent>
           {questions.map((question, questionIndex) => (
             <div key={questionIndex} className="mb-8 last:mb-0">
-              <h3 className="text-lg font-semibold mb-4">{question.question}</h3>
+              <h3 className="text-lg font-semibold mb-4">{question.definition}</h3>
               <div className="space-y-2">
-                {question.options.map((option, optionIndex) => {
+                {question.options?.map((option, optionIndex) => {
                   const currentLabel = answerLabels[optionIndex]
                   const isCorrect = currentLabel === question.answer
                   const isSelected = currentLabel === userAnswers[questionIndex]
